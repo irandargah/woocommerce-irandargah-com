@@ -2,7 +2,7 @@
 
 # Woocommerce IranDargah Gateway
 
-author: IranDargah.com
+author: [IranDargah.com](https://irandargah.com)
 
 Requires at least: 4.5
 
