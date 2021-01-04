@@ -17,9 +17,9 @@ function Load_IranDargah_Gateway()
             return $methods;
         }
 
-        add_filter('woocommerce_currencies', 'add_IR_currency');
+        add_filter('woocommerce_currencies', 'add_IRDIR_currency');
 
-        function add_IR_currency($currencies)
+        function add_IRDIR_currency($currencies)
         {
             $currencies['IRR'] = __('ریال', 'woocommerce');
             $currencies['IRT'] = __('تومان', 'woocommerce');
@@ -29,9 +29,9 @@ function Load_IranDargah_Gateway()
             return $currencies;
         }
 
-        add_filter('woocommerce_currency_symbol', 'add_IR_currency_symbol', 10, 2);
+        add_filter('woocommerce_currency_symbol', 'add_IRDIR_currency_symbol', 10, 2);
 
-        function add_IR_currency_symbol($currency_symbol, $currency)
+        function add_IRDIR_currency_symbol($currency_symbol, $currency)
         {
             switch ($currency) {
                 case 'IRR':
@@ -108,7 +108,7 @@ function Load_IranDargah_Gateway()
                         'title' => __('عنوان درگاه', 'woocommerce'),
                         'type' => 'text',
                         'description' => __('عنوان درگاه که در طی خرید به مشتری نمایش داده میشود', 'woocommerce'),
-                        'default' => __('پرداخت امن ایران درگاه', 'woocommerce'),
+                        'default' => __('پرداخت اینترنتی از طریق ایران درگاه', 'woocommerce'),
                         'desc_tip' => true,
                     ),
                     'description' => array(
@@ -116,7 +116,7 @@ function Load_IranDargah_Gateway()
                         'type' => 'text',
                         'desc_tip' => true,
                         'description' => __('توضیحاتی که در طی عملیات پرداخت برای درگاه نمایش داده خواهد شد', 'woocommerce'),
-                        'default' => __('پرداخت امن به وسیله کلیه کارت های عضو شتاب از طریق درگاه ایران درگاه', 'woocommerce'),
+                        'default' => __('پرداخت اینترنتی به وسیله کلیه کارت های عضو شتاب از طریق ایران درگاه', 'woocommerce'),
                     ),
                     'account_config' => array(
                         'title' => __('تنظیمات حساب ایران درگاه', 'woocommerce'),
@@ -126,7 +126,7 @@ function Load_IranDargah_Gateway()
                     'merchantcode' => array(
                         'title' => __('مرچنت کد', 'woocommerce'),
                         'type' => 'text',
-                        'description' => __('مرچنت کد درگاه ایران درگاه', 'woocommerce'),
+                        'description' => __('مرچنت کد ایران درگاه', 'woocommerce'),
                         'default' => '',
                         'desc_tip' => true,
                     ),
