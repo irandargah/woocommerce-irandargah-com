@@ -61,7 +61,7 @@ function Load_IranDargah_Gateway()
             {
 
                 $this->id = 'WC_IRDargah';
-                $this->method_title = __('پرداخت امن ایران درگاه', 'woocommerce');
+                $this->method_title = __('پرداخت اینترنتی از طریق ایران درگاه', 'woocommerce');
                 $this->method_description = __('تنظیمات درگاه پرداخت ایران درگاه برای افزونه فروشگاه ساز ووکامرس', 'woocommerce');
                 $this->icon = apply_filters('WC_IRDargah_logo', WP_PLUGIN_URL . '/' . plugin_basename(__DIR__) . '/assets/images/logo.png');
                 $this->has_fields = false;
@@ -108,7 +108,7 @@ function Load_IranDargah_Gateway()
                         'title' => __('عنوان درگاه', 'woocommerce'),
                         'type' => 'text',
                         'description' => __('عنوان درگاه که در طی خرید به مشتری نمایش داده میشود', 'woocommerce'),
-                        'default' => __('پرداخت اینترنتی از طریق ایران درگاه', 'woocommerce'),
+                        'default' => __('پرداخت با کلیه کارت‌های عضو شتاب', 'woocommerce'),
                         'desc_tip' => true,
                     ),
                     'description' => array(
