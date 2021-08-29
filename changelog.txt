@@ -1,0 +1,13 @@
+*** IranDargah Changelog ***
+
+= 2.0.0
+ * New Schemas and class names
+
+= 1.1.1
+ * Fix minor bugs
+
+= 1.1
+ * Add orderId in sending request
+
+= 1.0
+ * First Release
