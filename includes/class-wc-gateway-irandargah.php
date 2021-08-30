@@ -248,7 +248,7 @@ class WC_Gateway_IranDargah extends WC_Payment_Gateway
     public function check_response()
     {
         $this->handle_response(
-            $this->get_option('connection_method') == 'REST_GET' ? stripslashes_deep($_GET) : stripslashes_deep($_POST)
+            $this->get_option('connection_method') == 'REST_GET' && $this->get_option('sandbox') == 'no' ? stripslashes_deep($_GET) : stripslashes_deep($_POST)
         );
 
         // Notify IranDargah that information has been received
@@ -274,7 +274,6 @@ class WC_Gateway_IranDargah extends WC_Payment_Gateway
         $this->log('Get posted data');
         $this->log('IranDargah Data: ' . print_r($data, true));
 
-        $irandargah_done = false;
         $order_id = absint($_GET['wc_order']);
         $order = wc_get_order($order_id);
 
