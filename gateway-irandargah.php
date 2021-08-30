@@ -5,7 +5,7 @@
  * Description: IPG for woocommerce with IranDargah
  * Author: IranDargah
  * Author URI: https://irandargah.com
- * Version: 2.0.0
+ * Version: 2.0.1
  * Requires at least: 4.4
  * Tested up to: 5.8
  * Text Domain: woocommerce-gateway-irandargah
