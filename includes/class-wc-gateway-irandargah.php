@@ -114,7 +114,7 @@ class WC_Gateway_IranDargah extends WC_Payment_Gateway
                     'REST_GET' => __('REST-GET', 'woocommerce-gateway-irandargah'),
                     'SOAP' => __('SOAP', 'woocommerce-gateway-irandargah'),
                 ),
-                'default' => 'SOAP',
+                'default' => 'REST_POST',
             ),
             'currency' => array(
                 'title' => __('Store active curreny', 'woocommerce-gateway-irandargah'),
