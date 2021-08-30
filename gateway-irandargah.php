@@ -5,7 +5,7 @@
  * Description: IPG for woocommerce with IranDargah
  * Author: IranDargah
  * Author URI: https://irandargah.com
- * Version: 2.0.1
+ * Version: 2.0.2
  * Requires at least: 4.4
  * Tested up to: 5.8
  * Text Domain: woocommerce-gateway-irandargah
@@ -15,7 +15,7 @@ use Automattic\WooCommerce\Blocks\Payments\PaymentMethodRegistry;
 
 defined('ABSPATH') || exit;
 
-define('WC_GATEWAY_IRANDARGAH_VERSION', '2.0.0');
+define('WC_GATEWAY_IRANDARGAH_VERSION', '2.0.2');
 define('WC_GATEWAY_IRANDARGAH_URL', untrailingslashit(plugins_url(basename(plugin_dir_path(__FILE__)), basename(__FILE__))));
 define('WC_GATEWAY_IRANDARGAH_PATH', untrailingslashit(plugin_dir_path(__FILE__)));
 

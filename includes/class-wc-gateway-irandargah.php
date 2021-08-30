@@ -110,8 +110,8 @@ class WC_Gateway_IranDargah extends WC_Payment_Gateway
                 'description' => __('connect to irandargah webservice by selecting one of available methods.', 'woocommerce-gateway-irandargah'),
                 'options' => array(
                     null => __('Choose one', 'woocommerce-gateway-irandargah'),
-                    'REST_GET' => __('REST-GET', 'woocommerce-gateway-irandargah'),
                     'REST_POST' => __('REST-POST', 'woocommerce-gateway-irandargah'),
+                    'REST_GET' => __('REST-GET', 'woocommerce-gateway-irandargah'),
                     'SOAP' => __('SOAP', 'woocommerce-gateway-irandargah'),
                 ),
                 'default' => 'SOAP',

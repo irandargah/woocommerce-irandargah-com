@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: WooCommerce IranDargah Gateway\n"
-"POT-Creation-Date: 2021-08-30 12:02+0430\n"
-"PO-Revision-Date: 2021-08-30 12:02+0430\n"
+"POT-Creation-Date: 2021-08-30 13:20+0430\n"
+"PO-Revision-Date: 2021-08-30 13:19+0430\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -21,11 +21,11 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: gateway-irandargah.php:53
+#: gateway-irandargah.php:51
 msgid "Settings"
 msgstr ""
 
-#: gateway-irandargah.php:54
+#: gateway-irandargah.php:52
 msgid "Docs"
 msgstr ""
 
@@ -86,11 +86,11 @@ msgid "Choose one"
 msgstr ""
 
 #: includes/class-wc-gateway-irandargah.php:113
-msgid "REST-GET"
+msgid "REST-POST"
 msgstr ""
 
 #: includes/class-wc-gateway-irandargah.php:114
-msgid "REST-POST"
+msgid "REST-GET"
 msgstr ""
 
 #: includes/class-wc-gateway-irandargah.php:115
@@ -140,43 +140,43 @@ msgstr ""
 msgid "Error in connecting to gateway"
 msgstr ""
 
-#: includes/class-wc-gateway-irandargah.php:341
+#: includes/class-wc-gateway-irandargah.php:340
 msgid "payment has been completed"
 msgstr ""
 
-#: includes/class-wc-gateway-irandargah.php:375
+#: includes/class-wc-gateway-irandargah.php:374
 #, php-format
 msgid "Transaction payment status: %s"
 msgstr ""
 
-#: includes/class-wc-gateway-irandargah.php:377
+#: includes/class-wc-gateway-irandargah.php:376
 #, php-format
 msgid "Transaction ref id: %s"
 msgstr ""
 
-#: includes/class-wc-gateway-irandargah.php:379
+#: includes/class-wc-gateway-irandargah.php:378
 #, php-format
 msgid "Payer card number: %s"
 msgstr ""
 
-#: includes/class-wc-gateway-irandargah.php:447
+#: includes/class-wc-gateway-irandargah.php:446
 msgid "Error in sending request for connecting to gateway"
 msgstr ""
 
-#: includes/class-wc-gateway-irandargah.php:454
+#: includes/class-wc-gateway-irandargah.php:453
 msgid "Error in sending request for transaction's verification"
 msgstr ""
 
-#: includes/class-wc-gateway-irandargah.php:573
+#: includes/class-wc-gateway-irandargah.php:572
 msgid "There is no order number referenced."
 msgstr ""
 
-#: includes/class-wc-gateway-irandargah.php:575
+#: includes/class-wc-gateway-irandargah.php:574
 msgid ""
 "Please try again or contact the site administrator in case of a problem."
 msgstr ""
 
-#: includes/class-wc-gateway-irandargah.php:629
+#: includes/class-wc-gateway-irandargah.php:628
 msgid "IranDargah requires a merchant id to work."
 msgstr ""
 
