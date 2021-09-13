@@ -470,31 +470,40 @@ class WC_Gateway_IranDargah extends WC_Payment_Gateway
      */
     private function send_curl_request($url, $data)
     {
-        $curl = curl_init();
-        curl_setopt_array($curl, array(
-            CURLOPT_URL => $url,
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_FOLLOWLOCATION => false,
-            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-            CURLOPT_TIMEOUT => 15,
-            CURLOPT_CUSTOMREQUEST => 'POST',
-            CURLOPT_POSTFIELDS => json_encode($data),
-            CURLOPT_HTTPHEADER => [
-                'Content-Type: application/json',
-            ],
-        ));
+        $response = null;
+        $iteration = 3;
 
-        $response = curl_exec($curl);
-        $error = curl_error($curl);
+        do {
 
-        curl_close($curl);
+            $curl = curl_init();
+            curl_setopt_array($curl, array(
+                CURLOPT_URL => $url,
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_FOLLOWLOCATION => false,
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                CURLOPT_TIMEOUT => 15,
+                CURLOPT_CUSTOMREQUEST => 'POST',
+                CURLOPT_POSTFIELDS => json_encode($data),
+                CURLOPT_HTTPHEADER => [
+                    'Content-Type: application/json',
+                ],
+            ));
 
-        if ($error) {
-            $this->log('Error in sending request');
-            return null;
-        }
+            $response = curl_exec($curl);
+            $error = curl_error($curl);
 
-        $response = json_decode($response);
+            curl_close($curl);
+
+            if ($error) {
+                $this->log('Error in sending request');
+                return null;
+            }
+
+            $response = json_decode($response);
+
+            $iteration++;
+
+        } while (is_null($response) && $iteration < 3);
 
         return $response;
     }
@@ -511,12 +520,18 @@ class WC_Gateway_IranDargah extends WC_Payment_Gateway
         $client = new SoapClient($this->wsdl_url, ['cache_wsdl' => WSDL_CACHE_NONE]);
 
         $response = null;
+        $iteration = 0;
 
-        try {
-            $response = $client->__soapCall($method, [$data]);
-        } catch (\SoapFault $fault) {
-            $this->log($fault->getMessage());
-        }
+        do {
+            try {
+                $response = $client->__soapCall($method, [$data]);
+            } catch (\SoapFault $fault) {
+                $this->log($fault->getMessage());
+            }
+
+            $iteration++;
+
+        } while(is_null($response) && $iteration < 3);
 
         return $response;
     }
