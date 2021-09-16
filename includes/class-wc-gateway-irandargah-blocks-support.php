@@ -80,7 +80,7 @@ final class WC_IranDargah_Blocks_Support extends AbstractPaymentMethodType
             'title' => $this->get_setting('title'),
             'description' => $this->get_setting('description'),
             'supports' => $this->get_supported_features(),
-            'logo_url' => WC_GATEWAY_IRANDARGAH_URL . '/assets/images/icon.png',
+            'logo_url' => WC_GATEWAY_IRANDARGAH_URL . '/assets/images/icon.svg',
         ];
     }
 

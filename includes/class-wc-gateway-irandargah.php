@@ -34,7 +34,7 @@ class WC_Gateway_IranDargah extends WC_Payment_Gateway
         $this->id = 'irandargah';
         $this->method_title = __('IranDargah', 'woocommerce-gateway-irandargah');
         $this->method_description = sprintf(__('IranDargah payment gateway for woocommerce.', 'woocommerce-gateway-irandargah'), '<a href="https://irandargah.com">', '</a>');
-        $this->icon = WP_PLUGIN_URL . '/' . plugin_basename(dirname(dirname(__FILE__))) . '/assets/images/icon.png';
+        $this->icon = WP_PLUGIN_URL . '/' . plugin_basename(dirname(dirname(__FILE__))) . '/assets/images/icon.svg';
         $this->debug_email = get_option('admin_email');
         $this->available_countries = array('IR');
         $this->available_currencies = (array) apply_filters('woocommerce_gateway_irandargah_available_currencies', array('IRR', 'IRT'));
@@ -531,7 +531,7 @@ class WC_Gateway_IranDargah extends WC_Payment_Gateway
 
             $iteration++;
 
-        } while(is_null($response) && $iteration < 3);
+        } while (is_null($response) && $iteration < 3);
 
         return $response;
     }
