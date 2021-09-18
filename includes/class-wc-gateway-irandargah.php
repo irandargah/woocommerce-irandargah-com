@@ -48,9 +48,9 @@ class WC_Gateway_IranDargah extends WC_Payment_Gateway
 
         // Setup default merchant data.
         $this->merchant_id = $this->get_option('merchantId');
-        $this->wsdl_url = 'https://www.dargaah.com/wsdl';
-        $this->url = 'https://www.dargaah.com/payment';
-        $this->validate_url = 'https://www.dargaah.com/verification';
+        $this->wsdl_url = 'https://dargaah.com/wsdl';
+        $this->url = 'https://dargaah.com/payment';
+        $this->validate_url = 'https://dargaah.com/verification';
         $this->title = $this->get_option('title');
         $this->response_url = add_query_arg('wc-api', 'wc_gateway_irandargah', home_url('/'));
         $this->description = $this->get_option('description');
