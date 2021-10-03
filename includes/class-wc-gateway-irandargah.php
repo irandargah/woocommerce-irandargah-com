@@ -148,6 +148,24 @@ class WC_Gateway_IranDargah extends WC_Payment_Gateway
     }
 
     /**
+     *
+     * Check if this gateway is enabled and available in the base currency being traded with.
+     *
+     * @since 2.0.0
+     * @return bool
+     */
+    public function is_valid_for_use() {
+        $is_available          = false;
+        $is_available_currency = in_array(get_woocommerce_currency(), $this->available_currencies);
+
+        if ($is_available_currency && $this->merchant_id) {
+            $is_available = true;
+        }
+
+        return $is_available;
+    }
+
+    /**
      * Admin Panel Options
      * - Options for bits like 'title' and availability on a country-by-country basis
      *
