@@ -15,7 +15,7 @@ use Automattic\WooCommerce\Blocks\Payments\PaymentMethodRegistry;
 
 defined('ABSPATH') || exit;
 
-define('WC_GATEWAY_IRANDARGAH_VERSION', '2.0.2');
+define('WC_GATEWAY_IRANDARGAH_VERSION', '2.0.6');
 define('WC_GATEWAY_IRANDARGAH_URL', untrailingslashit(plugins_url(basename(plugin_dir_path(__FILE__)), basename(__FILE__))));
 define('WC_GATEWAY_IRANDARGAH_PATH', untrailingslashit(plugin_dir_path(__FILE__)));
 
