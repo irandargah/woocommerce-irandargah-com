@@ -360,7 +360,7 @@ class WC_Gateway_IranDargah extends WC_Payment_Gateway
         $order_id = self::get_order_prop($order, 'id');
 
         $this->data_to_send = [
-            'merchantID' => $this->get_option('merchantId'),
+            'merchantID' => $this->get_option('sandbox') == 'no' ? $this->get_option('merchantId') : 'TEST',
             'authority' => $data['authority'],
             'amount' => $data['amount'],
             'orderId' => $data['orderId'],
