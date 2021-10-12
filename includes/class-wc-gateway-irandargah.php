@@ -450,7 +450,7 @@ class WC_Gateway_IranDargah extends WC_Payment_Gateway
 
         $this->data_to_send = strpos($option, 'GET') ? array_merge($this->data_to_send, ['action' => 'GET']) : $this->data_to_send;
 
-        $response = strpos($option, 'REST') || $option == 'SANDBOX' ? $this->send_curl_request(
+        $response = strpos($option, 'REST') !== false || $option == 'SANDBOX' ? $this->send_curl_request(
             $method == 'payment' ? $this->url : $this->validate_url,
             $this->data_to_send
         ) : $this->send_soap_request(
