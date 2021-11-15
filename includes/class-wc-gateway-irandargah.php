@@ -203,8 +203,15 @@ class WC_Gateway_IranDargah extends WC_Payment_Gateway
         global $woocommerce;
 
         $order = wc_get_order($order_id);
-        // Construct variables for post
 
+        $products = array();
+        $order_items = $order->get_items();
+        foreach ($order_items as $product) {
+            $products[] = $product['name'] . " (" . $product['qty'] . ") ";
+        }
+        $products = implode(' - ', $products);
+
+        // Construct variables for post
         $this->data_to_send = array(
             // Merchant details
             'merchantID' => $this->get_option('sandbox') == 'no' ? $this->merchant_id : 'TEST',
@@ -214,7 +221,7 @@ class WC_Gateway_IranDargah extends WC_Payment_Gateway
             'mobile' => self::get_order_prop($order, 'billing_phone'),
             'orderId' => self::get_order_prop($order, 'id'),
             'amount' => intval($order->get_total()) * ($this->get_option('currency') == 'IRT' ? 10 : 1),
-            'description' => "سفارش شماره: " . self::get_order_prop($order, 'id') . " خریدار: " . self::get_order_prop($order, 'billing_first_name') . " " . self::get_order_prop($order, 'billing_last_name'),
+            'description' => "سفارش شماره: " . self::get_order_prop($order, 'id') . " | خریدار: " . self::get_order_prop($order, 'billing_first_name') . " " . self::get_order_prop($order, 'billing_last_name') . ' | محصولات: ' . $products,
         );
 
         $response = $this->send_request_to_irandargah_gateway(
@@ -464,14 +471,12 @@ class WC_Gateway_IranDargah extends WC_Payment_Gateway
                 $note = __('Error in sending request for connecting to gateway', 'woocommerce-gateway-irandargah');
                 $order->add_order_note($note);
                 wp_redirect($woocommerce->cart->get_checkout_url());
-
                 exit;
             } else {
                 $order->update_status('failed');
                 $note = __('Error in sending request for transaction\'s verification', 'woocommerce-gateway-irandargah');
                 $order->add_order_note($note);
                 wp_redirect($woocommerce->cart->get_checkout_url());
-
                 exit;
             }
         }
