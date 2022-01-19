@@ -5,7 +5,7 @@
  * Description: IPG for woocommerce with IranDargah
  * Author: IranDargah
  * Author URI: https://irandargah.com
- * Version: 2.0.9
+ * Version: 2.0.10
  * Requires at least: 4.4
  * Tested up to: 5.8
  * Text Domain: woocommerce-gateway-irandargah
@@ -15,7 +15,7 @@ use Automattic\WooCommerce\Blocks\Payments\PaymentMethodRegistry;
 
 defined('ABSPATH') || exit;
 
-define('WC_GATEWAY_IRANDARGAH_VERSION', '2.0.6');
+define('WC_GATEWAY_IRANDARGAH_VERSION', '2.0.10');
 define('WC_GATEWAY_IRANDARGAH_URL', untrailingslashit(plugins_url(basename(plugin_dir_path(__FILE__)), basename(__FILE__))));
 define('WC_GATEWAY_IRANDARGAH_PATH', untrailingslashit(plugin_dir_path(__FILE__)));
 
@@ -30,7 +30,6 @@ function woocommerce_irandargah_init()
     }
 
     require_once plugin_basename('includes/class-wc-gateway-irandargah.php');
-    //load_plugin_textdomain('woocommerce-gateway-irandargah', false, trailingslashit(dirname(plugin_basename(__FILE__))));
     load_plugin_textdomain('woocommerce-gateway-irandargah', false, dirname(plugin_basename(__FILE__)) . '/languages/');
     add_filter('woocommerce_payment_gateways', 'woocommerce_irandargah_add_gateway');
 }
