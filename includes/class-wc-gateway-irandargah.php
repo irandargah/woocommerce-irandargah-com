@@ -410,7 +410,7 @@ class WC_Gateway_IranDargah extends WC_Payment_Gateway
             update_post_meta($order_id, 'irandargah_payment_card_no', $verification_result->cardNumber);
 
             $order->payment_complete($verification_result->refId);
-            $order->update_status('completed');
+            $order->update_status('processing');
             $woocommerce->cart->empty_cart();
             $this->irandargah_display_success_message($order_id);
 
